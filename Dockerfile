@@ -17,6 +17,11 @@ RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
 ADD . /httpbin
 RUN pip3 install --no-cache-dir /httpbin
 
-EXPOSE 8080
+ARG PORT=8080
+ENV PORT $PORT
+EXPOSE $PORT
 
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "httpbin:app", "-k", "gevent"]
+ARG options
+ENV OPTIONS $options
+
+CMD exec gunicorn $OPTIONS --bind :$PORT -k gevent httpbin:app

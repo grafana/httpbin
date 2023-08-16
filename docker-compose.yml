@@ -1,6 +1,11 @@
-version: '2'
+version: "3"
 services:
-    httpbin:
-      build: '.'
-      ports:
-        - '80:80'
+  app:
+    build:
+      context: .
+      args:
+        options: --reload
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/httpbin
