@@ -4,6 +4,14 @@ An HTTPBin site to help you familiarize yourself with k6, deployed at https://k6
 
 This project is a fork of [httpbin](https://github.com/kennethreitz/httpbin) by [Kenneth Reitz](http://kennethreitz.org/bitcoin).
 
+## Update requirements
+
+Install locally the same Poetry version that is defined in `Dockerfile`,
+and then run:
+
+```sh
+poetry lock
+```
 
 ## Run in Docker
 
@@ -18,8 +26,9 @@ docker run -p 8080:8080 grafana/k6-httpbin
 
 You should now be able to access it at http://localhost:8080/
 
-For development, use `docker-compose`:
+For development:
 
 ```sh
-docker-compose up -d
+docker build -t httpbin .
+docker run -p 8080:8080  -it httpbin:latest
 ```

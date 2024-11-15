@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "k6-httpbin"
+version = "0.1.0"
+description = "k6 httpbin"
+authors = ["k6 <developers@k6.io>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+gunicorn = "*"
+decorator = "*"
+brotlipy = "*"
+gevent = "*"
+Flask = "*"
+werkzeug = ">=0.14.1"
+six = "*"
+flasgger = "*"
+pyyaml = { git = "https://github.com/yaml/pyyaml.git" }
+
+[tool.poetry.group.dev.dependencies]
+rope = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
