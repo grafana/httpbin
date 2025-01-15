@@ -1,4 +1,5 @@
 # k6 HTTPBin Play: HTTP Request & Response Service
+# NOTE: Deprecated, use https://github.com/grafana/quickpizza instead.
 
 An HTTPBin site to help you familiarize yourself with k6, deployed at https://k6-http.grafana.fun/.
 
